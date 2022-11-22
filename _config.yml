@@ -6,14 +6,13 @@ google_analytics: "UA-46465113-2"
 
 # UI configs
 title: "Photography by Savelle Anthony"
-subtitle: "See the world through my eyes!"
+subtitle: ""
 author: "Savelle Anthony"
 header:
  title: "Photography"
  subtitle: "by Savelle Anthony"
 footer:
- name: "Hey there, my name is Savelle"
- bio: "I am a developer and a tech aficionado from India. Love making teeny tiny apps solving tiny problems in life and now learning photography."
-web_design: "AJ"
+ name: "About Savelle"
+ bio: "I'm a new photographer, hoping to learn as much as possible"
 social_urls:
   github: "https://www.github.com/savelle-anthony"
