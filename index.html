@@ -18,33 +18,16 @@ layout: default
     <!-- Main -->
     <div id="main">
         {% assign images = site.static_files | sort: "name" | reverse %}
-        {%- comment -%}
-        First loop: Show year-stamped images (names like 2023-..., 2024-...)
-        {%- endcomment -%}
         {% for image in images %}
-            {% if image.path contains 'fulls' %}
-                {% if image.name.size >= 5 and image.name[0] >= '0' and image.name[0] <= '9' and image.name[1] >= '0' and image.name[1] <= '9' and image.name[2] >= '0' and image.name[2] <= '9' and image.name[3] >= '0' and image.name[3] <= '9' and image.name[4] == '-' %}
-                    <article class="thumb">
-                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                            <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="" data-name="{{ image.name }}"/>
-                        </a>
-                    </article>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-        {%- comment -%}
-        Second loop: Show all other images (non-year-stamped)
-        {%- endcomment -%}
-        {% for image in images %}
-            {% if image.path contains 'fulls' %}
-                {% unless image.name.size >= 5 and image.name[0] >= '0' and image.name[0] <= '9' and image.name[1] >= '0' and image.name[1] <= '9' and image.name[2] >= '0' and image.name[2] <= '9' and image.name[3] >= '0' and image.name[3] <= '9' and image.name[4] == '-' %}
-                    <article class="thumb">
-                        <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                            <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="" data-name="{{ image.name }}"/>
-                        </a>
-                    </article>
-                {% endunless %}
-            {% endif %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            <!--<h2></h2>
+            <p></p>-->
+        </article>
+        {% endif %}
         {% endfor %}
     </div>
 
